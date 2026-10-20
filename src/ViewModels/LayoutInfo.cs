@@ -35,7 +35,7 @@ namespace SourceGit.ViewModels
             set;
         } = WindowState.Normal;
 
-        public double RepositoryDashboardWidth
+        public double RepositorySidebarWidth
         {
             get;
             set;
@@ -46,6 +46,12 @@ namespace SourceGit.ViewModels
             get;
             set;
         } = 250;
+
+        public bool IsSidebarCollapsedInLocalChanges
+        {
+            get => _isSidebarCollapsedInLocalChanges;
+            set => SetProperty(ref _isSidebarCollapsedInLocalChanges, value);
+        }
 
         public GridLength WorkingCopyLeftWidth
         {
@@ -71,16 +77,10 @@ namespace SourceGit.ViewModels
             set => SetProperty(ref _commitDetailFilesLeftWidth, value);
         }
 
-        public double AIChatPanelHeight
-        {
-            get => _aiChatPanelHeight;
-            set => SetProperty(ref _aiChatPanelHeight, value);
-        }
-
         private GridLength _workingCopyLeftWidth = new GridLength(300, GridUnitType.Pixel);
         private GridLength _stashesLeftWidth = new GridLength(300, GridUnitType.Pixel);
         private GridLength _commitDetailChangesLeftWidth = new GridLength(256, GridUnitType.Pixel);
         private GridLength _commitDetailFilesLeftWidth = new GridLength(256, GridUnitType.Pixel);
-        private double _aiChatPanelHeight = 280;
+        private bool _isSidebarCollapsedInLocalChanges = false;
     }
 }
