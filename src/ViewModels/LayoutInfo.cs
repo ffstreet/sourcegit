@@ -77,10 +77,17 @@ namespace SourceGit.ViewModels
             set => SetProperty(ref _commitDetailFilesLeftWidth, value);
         }
 
+        public double AIChatPanelHeight
+        {
+            get => _aiChatPanelHeight;
+            set => SetProperty(ref _aiChatPanelHeight, value);
+        }
+
         private GridLength _workingCopyLeftWidth = new GridLength(300, GridUnitType.Pixel);
         private GridLength _stashesLeftWidth = new GridLength(300, GridUnitType.Pixel);
         private GridLength _commitDetailChangesLeftWidth = new GridLength(256, GridUnitType.Pixel);
         private GridLength _commitDetailFilesLeftWidth = new GridLength(256, GridUnitType.Pixel);
         private bool _isSidebarCollapsedInLocalChanges = false;
+        private double _aiChatPanelHeight = 280;
     }
 }
